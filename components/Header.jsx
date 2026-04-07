@@ -42,13 +42,16 @@ export default function Header({ theme, toggleTheme, onAddTask }) {
             <div>
               <h1
                 className="font-display font-bold text-base leading-none"
-                style={{ color: "var(--text-primary)" }}
+                style={{ color: "var(--text-accent)" }}
               >
                 StudyTracker
               </h1>
               <p
-                className="text-[10px] leading-none mt-0.5 hidden sm:block"
-                style={{ color: "var(--text-secondary)" }}
+                className="mt-0.5 text-[8px] px-2 py-0.5 rounded-full"
+                style={{
+                  backgroundColor: "rgba(68,68,234,0.1)",
+                  color: "#4444ea",
+                }}
               >
                 {isAdmin ? "Admin Mode" : "Guest View — read only"}
               </p>
