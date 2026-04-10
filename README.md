@@ -22,14 +22,7 @@ A full-stack study task manager with **MongoDB + Prisma**, **JWT authentication*
 | **Guest** | View all tasks, filter, search |
 | **Admin** | Everything — create, edit, complete, delete tasks |
 
-Admin credentials are set in `.env`:
-```
-ADMIN_USERNAME=admin
-ADMIN_PASSWORD=admin123
-```
-Change these values to customise the admin account. No database user needed — credentials live in env.
 
----
 
 ## 🗂️ Project Structure
 
@@ -86,46 +79,6 @@ study-tracker/
 
 ---
 
-## 🚀 Setup
-
-### 1. Clone & install
-```bash
-unzip study-tracker.zip && cd study-tracker
-npm install
-```
-
-### 2. Configure `.env`
-```bash
-cp .env.example .env
-```
-Edit `.env`:
-```env
-# MongoDB Atlas connection string
-DATABASE_URL="mongodb+srv://user:pass@cluster.mongodb.net/study-tracker"
-
-# JWT — generate a strong secret:
-# node -e "console.log(require('crypto').randomBytes(64).toString('hex'))"
-JWT_SECRET="your-very-long-random-secret"
-
-# Admin account — change these!
-ADMIN_USERNAME="admin"
-ADMIN_PASSWORD="yourpassword"
-```
-
-### 3. Push schema to MongoDB & generate Prisma client
-```bash
-npm run prisma:generate   # generates PrismaClient types
-npm run prisma:push       # pushes schema to MongoDB (creates collections)
-```
-
-### 4. Run
-```bash
-npm run dev       # dev with Turbopack
-npm run build     # production build
-npm start         # production server
-```
-
----
 
 ## 🔌 API Reference
 
